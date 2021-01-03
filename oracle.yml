@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  OracleXE:
+    image: oracle/database:11.2.0.2-xe
+    environment:
+      - "ORACLE_PWD=oracle"
+    volumes:
+      - oracle-data:/u01/app/oracle/oradata
+    ports:
+      - "1521:1521"
+      - "8081:8080"
+    shm_size: 1g
+
+volumes:
+  oracle-data:
